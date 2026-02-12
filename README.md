@@ -1,0 +1,2 @@
+# easyocrnew
+training easyocr
