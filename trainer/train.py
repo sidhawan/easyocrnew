@@ -212,7 +212,7 @@ def train(opt, show_number = 2, amp=False):
                 torch.backends.cudnn.enabled = False
                 cost = criterion(preds, text.to(device), preds_size.to(device), length.to(device))
                 torch.backends.cudnn.enabled = True
-                print("Cost:" cost)
+                print("Cost:",cost)
             else:
                 preds = model(image, text[:, :-1])  # align with Attention.forward
                 target = text[:, 1:]  # without [GO] Symbol
