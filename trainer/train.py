@@ -15,6 +15,7 @@ from utils import CTCLabelConverter, AttnLabelConverter, Averager
 from dataset import hierarchical_dataset, AlignCollate, Batch_Balanced_Dataset
 from model import Model
 from mytest import validation
+from tqdm import tqdm
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 def count_parameters(model):
@@ -171,7 +172,7 @@ def train(opt, show_number = 2, amp=False):
 
     scaler = GradScaler()
     t1= time.time()
-        
+    pbar = tqdm(total=opt.num_iter, initial=i, desc="Training progress")    
     while(True):
         # train part
         optimizer.zero_grad(set_to_none=True)
@@ -280,3 +281,4 @@ def train(opt, show_number = 2, amp=False):
             print('end the training')
             sys.exit()
         i += 1
+        pbar.update(1)
