@@ -4,11 +4,11 @@ lang_char: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 experiment_name: 'en_filtered'
 train_data: '/kaggle/input/ocr-dataset/en_2026-02-11_23-43-30'
 valid_data: '/kaggle/input/ocr-dataset/en_2026-02-11_23-43-30'
-manualSeed: 1111
-workers: 6
-batch_size: 128 #32
-num_iter: 30000
-valInterval: 10
+manualSeed: 41
+workers: 4
+batch_size: 512 #32
+num_iter: 20000
+valInterval: 3000
 saved_model: '' #'saved_models/en_filtered/iter_300000.pth'
 FT: False
 optim: False # default is Adadelta
