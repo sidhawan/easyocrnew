@@ -38,7 +38,7 @@ def validation(model, criterion, evaluation_loader, converter, opt, device):
             forward_time = time.time() - start_time
 
             # Calculate evaluation loss for CTC decoder.
-            preds_size = torch.IntTensor([preds.size(1)] * batch_size)
+            preds_size = torch.IntTensor([preds.size(1)] * batch_size,device=device)
             # permute 'preds' to use CTCloss format
             
             print("Devices:",
