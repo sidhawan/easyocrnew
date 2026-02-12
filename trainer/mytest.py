@@ -39,7 +39,7 @@ def validation(model, criterion, evaluation_loader, converter, opt, device):
 
 
             # Calculate evaluation loss for CTC decoder.
-            preds_size = torch.IntTensor([preds.size(1)] * batch_size,device=device)
+            preds_size = torch.IntTensor([preds.size(1)] * batch_size).to(device)
             # permute 'preds' to use CTCloss format
             print("heloooooooooooo",preds.device,text_for_loss.device,preds_size.device,length_for_loss.device)
             # cost=0
