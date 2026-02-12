@@ -31,7 +31,8 @@ def validation(model, criterion, evaluation_loader, converter, opt, device):
         text_for_pred = torch.LongTensor(batch_size, opt.batch_max_length + 1).fill_(0).to(device)
 
         text_for_loss, length_for_loss = converter.encode(labels, batch_max_length=opt.batch_max_length)
-        
+        text_for_loss = text_for_loss.to(device)
+        length_for_loss = length_for_loss.to(device)
         start_time = time.time()
         if 'CTC' in opt.Prediction:
             preds = model(image, text_for_pred).to(device)
