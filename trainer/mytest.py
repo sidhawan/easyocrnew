@@ -36,16 +36,17 @@ def validation(model, criterion, evaluation_loader, converter, opt, device):
         if 'CTC' in opt.Prediction:
             preds = model(image, text_for_pred).to(device)
             forward_time = time.time() - start_time
-
-            # Calculate evaluation loss for CTC decoder.
-            preds_size = torch.IntTensor([preds.size(1)] * batch_size,device=device)
-            # permute 'preds' to use CTCloss format
-            
             print("Devices:",
                 preds.device,
                 text_for_loss.device,
                 preds_size.device,
                 length_for_loss.device)
+
+
+            # Calculate evaluation loss for CTC decoder.
+            preds_size = torch.IntTensor([preds.size(1)] * batch_size,device=device)
+            # permute 'preds' to use CTCloss format
+            
 
             cost = criterion(
                 preds.log_softmax(2).permute(1, 0, 2).to('cpu'),
