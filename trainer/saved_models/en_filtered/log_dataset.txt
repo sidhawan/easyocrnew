@@ -90,3 +90,19 @@ dataset_root:    C:/Users/sidhawan/Desktop/ocr/en_2026-02-11_23-43-30_v2/en_2026
 sub-directory:	/test_data	 num samples: 2260
 sub-directory:	/train_data	 num samples: 9038
 --------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: C:\Users\sidhawan\Desktop\ocr\en_2026-02-11_23-43-30_v2
+opt.select_data: ['train_data']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    C:\Users\sidhawan\Desktop\ocr\en_2026-02-11_23-43-30_v2	 dataset: train_data
+sub-directory:	/en_2026-02-11_23-43-30\train_data	 num samples: 9038
+num total samples of train_data: 9038 x 1.0 (total_data_usage_ratio) = 9038
+num samples of train_data per batch: 32 x 1.0 (batch_ratio) = 32
+--------------------------------------------------------------------------------
+Total_batch_size: 32 = 32
+--------------------------------------------------------------------------------
+dataset_root:    C:\Users\sidhawan\Desktop\ocr\en_2026-02-11_23-43-30_v2	 dataset: /
+sub-directory:	/en_2026-02-11_23-43-30\test_data	 num samples: 2260
+sub-directory:	/en_2026-02-11_23-43-30\train_data	 num samples: 9038
+--------------------------------------------------------------------------------

@@ -8,7 +8,7 @@ manualSeed: 1111
 workers: 6
 batch_size: 128 #32
 num_iter: 30000
-valInterval: 5000
+valInterval: 10
 saved_model: '' #'saved_models/en_filtered/iter_300000.pth'
 FT: False
 optim: False # default is Adadelta
