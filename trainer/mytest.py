@@ -45,13 +45,13 @@ def validation(model, criterion, evaluation_loader, converter, opt, device):
             preds_size = torch.IntTensor([preds.size(1)] * batch_size,device=device)
             # permute 'preds' to use CTCloss format
             
-
-            cost = criterion(
-                preds.log_softmax(2).permute(1, 0, 2).to('cpu'),
-                text_for_loss,
-                preds_size.to('cpu'),
-                length_for_loss
-            )
+            cost=0
+            # cost = criterion(
+            #     preds.log_softmax(2).permute(1, 0, 2),
+            #     text_for_loss,
+            #     preds_size,
+            #     length_for_loss
+            # )
 
 
             if opt.decode == 'greedy':
