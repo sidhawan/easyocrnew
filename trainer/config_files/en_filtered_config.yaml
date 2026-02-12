@@ -2,8 +2,8 @@ number: '0123456789'
 symbol: "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ €"
 lang_char: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 experiment_name: 'en_filtered'
-train_data: 'C:/Users/sidhawan/Desktop/ocr/en_2026-02-11_23-43-30_v2/en_2026-02-11_23-43-30'
-valid_data: 'C:/Users/sidhawan/Desktop/ocr/en_2026-02-11_23-43-30_v2/en_2026-02-11_23-43-30'
+train_data: '/kaggle/input/ocr-dataset/en_2026-02-11_23-43-30'
+valid_data: '/kaggle/input/ocr-dataset/en_2026-02-11_23-43-30'
 manualSeed: 1111
 workers: 6
 batch_size: 128 #32
