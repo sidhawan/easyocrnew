@@ -38,9 +38,7 @@ def validation(model, criterion, evaluation_loader, converter, opt, device):
             forward_time = time.time() - start_time
             print("Devices:",
                 preds.device,
-                text_for_loss.device,
-                preds_size.device,
-                length_for_loss.device)
+                preds_size.device)
 
 
             # Calculate evaluation loss for CTC decoder.
@@ -50,9 +48,9 @@ def validation(model, criterion, evaluation_loader, converter, opt, device):
 
             cost = criterion(
                 preds.log_softmax(2).permute(1, 0, 2).to('cpu'),
-                text_for_loss.to('cpu'),
+                text_for_loss,
                 preds_size.to('cpu'),
-                length_for_loss.to('cpu')
+                length_for_loss
             )
 
 
